@@ -1,0 +1,12 @@
+---
+name: Catalyst-Engine-SCGI
+version: 0.1
+author: Victor Igumnov
+abstract: Catalyst SCGI Engine
+license: perl
+provides:
+  Catalyst::Engine::SCGI:
+    file: lib/Catalyst/Engine/SCGI.pm
+    version: 0.1
+  Catalyst::Helper::SCGI:
+    file: lib/Catalyst/Helper/SCGI.pm
