@@ -1,4 +1,4 @@
-use inc::Module::Install;
+use inc::Module::Install 0.87;
 
 requires Catalyst	=> '5.7';
 requires SCGI		=> 0;
