@@ -7,4 +7,6 @@ name 'Catalyst-Engine-SCGI';
 all_from 'lib/Catalyst/Engine/SCGI.pm';
 
 auto_install;
+resources repository => 'http://dev.catalyst.perl.org/repos/Catalyst/Catalyst-Engine-SCGI/trunk/';
+
 WriteAll;
