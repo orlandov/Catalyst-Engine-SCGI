@@ -105,22 +105,6 @@ sub prepare_path {
         $base_path = $ENV{SCRIPT_NAME} || '/';
     }
 
-    # If we are running as a backend proxy, get the true hostname
-  PROXY_CHECK:
-    {
-        unless ( $c->config->{using_frontend_proxy} ) {
-            last PROXY_CHECK if $host !~ /localhost|127.0.0.1/;
-            last PROXY_CHECK if $c->config->{ignore_frontend_proxy};
-        }
-        last PROXY_CHECK unless $ENV{HTTP_X_FORWARDED_HOST};
-
-        $host = $ENV{HTTP_X_FORWARDED_HOST};
-
-        # backend could be on any port, so
-        # assume frontend is on the default port
-        $port = $c->request->secure ? 443 : 80;
-    }
-
     my $path = $base_path . ( $ENV{PATH_INFO} || '' );
     $path =~ s{^/+}{};
 
