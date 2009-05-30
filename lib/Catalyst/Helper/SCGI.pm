@@ -33,7 +33,7 @@ sub mk_stuff {
     my ( $self, $helper, @args ) = @_;
 
     my $base = $helper->{base};
-    my $app  = $helper->{app};
+    my $app  = lc($helper->{app});
 
     $helper->render_file( "scgi_script",
         File::Spec->catfile( $base, 'script', "$app\_scgi.pl" ) );
