@@ -86,51 +86,6 @@ sub write {
     $self->{_request}->connection->print($buffer);
 }
 
-=head2 $self->prepare_path($c)
-
-=cut
-sub prepare_path {
-    my ( $self, $c ) = @_;
-    local (*ENV) = $self->env || \%ENV;
-
-    my $scheme = $c->request->secure ? 'https' : 'http';
-    my $host      = $ENV{HTTP_HOST}   || $ENV{SERVER_NAME};
-    my $port      = $ENV{SERVER_PORT} || 80;
-    my $base_path;
-    if ( exists $ENV{REDIRECT_URL} ) {
-        $base_path = $ENV{REDIRECT_URL};
-        $base_path =~ s/$ENV{PATH_INFO}$//;
-    }
-    else {
-        $base_path = $ENV{SCRIPT_NAME} || '/';
-    }
-
-    my $path = $base_path . ( $ENV{PATH_INFO} || '' );
-    $path =~ s{^/+}{};
-
-    my $uri = $uri_proto->clone;
-    $uri->scheme($scheme);
-    $uri->host($host);
-    $uri->port($port);
-    $uri->path($path);
-    $uri->query( $ENV{QUERY_STRING} ) if $ENV{QUERY_STRING};
-
-    # sanitize the URI
-    $uri = $uri->canonical;
-    $c->request->uri($uri);
-
-    # set the base URI
-    # base must end in a slash
-    $base_path .= '/' unless ( $base_path =~ /\/$/ );
-    my $base = $uri->clone;
-    
-    my ($base_uri) = $base_path=~ /(.*?)\//;
-    $base_uri .= '/' unless ($base_uri =~/\/$/ );
-    
-    $base->path_query($base_uri);
-    $c->request->base($base);
-}
-
 =head2 $self->read_chunk ( $c, $buffer, $readlen )
  
  Read Body content to $_[3]'s set length and direct output to $_[2].
