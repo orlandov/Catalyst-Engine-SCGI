@@ -5,6 +5,8 @@ use strict;
 use Config;
 use File::Spec;
 
+our $VERSION = '0.02';
+
 =head1 NAME
 
 Catalyst::Helper::SCGI - SCGI helper to create a scgi runner script to run the SCGI engine.

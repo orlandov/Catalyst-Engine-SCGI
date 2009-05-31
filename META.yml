@@ -1,7 +1,7 @@
 ---
 name: Catalyst-Engine-SCGI
-version: 0.1
-author: Victor Igumnov
+version: 0.2
+author: Orlando Vazquez
 abstract: Catalyst SCGI Engine
 license: perl
 provides:

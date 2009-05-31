@@ -1,14 +1,14 @@
 package Catalyst::Engine::SCGI;
 
 use strict;
+use warnings;
+
 use base 'Catalyst::Engine::CGI';
 eval "use SCGI";
 die "Please install SCGI\n" if $@;
 use IO::Socket;
-use Data::Dumper;
 
-
-my $uri_proto=URI->new();
+our $VERSION = '0.02';
 
 =head1 NAME
 
