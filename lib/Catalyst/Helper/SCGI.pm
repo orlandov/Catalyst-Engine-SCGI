@@ -44,17 +44,18 @@ sub mk_stuff {
 
 =head1 AUTHOR
 
-Victor Igumnov, C<< <victori at lamer0.com> >>
+Orlando Vazquez, C< <orlando at 2wycked.net> >
 
 =head1 BUGS
 
 Please report any bugs or feature requests to
-C<victori at cpan.org>
+C<orlando at 2wycked.net>
 
 =head1 ACKNOWLEDGEMENTS
 
 =head1 COPYRIGHT & LICENSE
 
+Copyright 2009 Orlando Vazquez, all rights reserved.
 Copyright 2006 Victor Igumnov, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
@@ -116,7 +117,7 @@ Run a Catalyst application as SCGI.
 
 =head1 AUTHOR
 
-Victor Igumnov, C<victori@cpan.org>
+Orlando Vazquez C<< orlando@2wycked.net >>
 
 =head1 COPYRIGHT
 
