@@ -5,7 +5,7 @@ all_from 'lib/Catalyst/Engine/SCGI.pm';
 requires Catalyst => '5.8';
 requires SCGI     => 0;
 
-resources repository => 'catagits@jules.scsys.co.uk:Catalyst-Engine-SCGI';
+resources repository => 'git://jules.scsys.co.uk/catagits/Catalyst-Engine-SCGI';
 
 WriteAll;
 
